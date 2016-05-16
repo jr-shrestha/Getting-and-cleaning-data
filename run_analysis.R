@@ -1,3 +1,5 @@
+library(dplyr)
+library(data.table)
 
 data.url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 data.dir <- "UCI HAR Dataset"
@@ -69,5 +71,5 @@ setnames(Data.new, colnames(Data.new), gsub("BodyBody", "Body", colnames(Data.ne
 Data.Summary <- Data.new %>%group_by(subject, activity) %>% summarise_each(funs(mean))
 
 #Write the detailed and summary data to data files
-write.csv(Data.new, "full_data.csv")
-write.csv(Data.Summary, "summary_data.csv")
+write.table(Data.new, "full_data.txt", row.names=FALSE)
+write.table(Data.Summary, "summary_data.txt", row.names=FALSE)

@@ -20,4 +20,4 @@ The script does the following actions:
 - Replace activity codes with labels in dataset.
 - Rename the columns with tidy names.
 - Calculate the mean for each group of subject and activity.
-- Write tidy dataset and summary dataset to csv files.
+- Write tidy dataset and summary dataset to text files.
